@@ -1,0 +1,10 @@
+<view class="goods_comment_wrap">
+    <view class="user_info_wrap">
+        <image src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKPCm3sycpmcPibxQ4hIicqU6695w7I6GPmjohM8M1mhhCTtiaEyYxGEciaN1y6A93dM2ic6VCvlRib6zfQ/132" />
+        <view class="user_name">用户名</view>
+    </view>
+    <view class="comment_info_wrap">
+        <view class="comment_time">2021-03-10 00:33:50</view>
+        <view class="comment-info">这个商品还不错！</view>
+    </view>
+</view>

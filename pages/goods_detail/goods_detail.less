@@ -1,12 +1,14 @@
 .info_wrap {
     margin: 10rpx;
     border-radius: 20rpx;
-    box-shadow:  0rpx 0rpx 10rpx rgb(100, 100, 100);
+    box-shadow: 0rpx 0rpx 10rpx rgb(100, 100, 100);
     background-color: white;
+
     .detal_swiper {
         swiper {
             height: 65vw;
             text-align: center;
+
             image {
                 margin-top: 15rpx;
                 width: 70%;
@@ -17,13 +19,13 @@
     .goods_price {
         margin-left: 10rpx;
         font-size: 32rpx;
-        font-weight: bold;  
+        font-weight: bold;
         color: var(--themeColor);
     }
 
     .goods_name_view {
         display: flex;
-       
+
         border-top: 1rpx solid rgb(199, 199, 199);
 
         .goods_name {
@@ -46,25 +48,61 @@
             align-items: center;
             border-left: 1rpx solid rgb(199, 199, 199);
 
+            .icon-aixin {
+                color: var(--themeColor);
+            }
+
             .iconfont {}
 
-            .collect_text {}
+            .collect_text {color: gray;}
+        }
+    }
+}
+.goods_comment_wrap{
+    box-shadow: 0rpx 0rpx 10rpx rgb(100, 100, 100);
+        border-radius: 20rpx;
+        margin: 10rpx;
+        background-color: white;
+    .goods_comment_navi {
+        display: flex;
+        
+        .goods_comment {
+            flex: 1;
+            margin: 10rpx;
+            font-weight: bold;
+        }
+    
+        .goods_show_more {
+            flex: 1;
+            margin: 10rpx;
+            text-align: right;
+            font-size: 28rpx;
+            color: coral;
         }
     }
 }
 
+
 .goods_info {
+    box-shadow: 0rpx 0rpx 10rpx rgb(100, 100, 100);
     border-radius: 20rpx;
     margin: 10rpx;
+    background-color: white;
 
     .goods_info_title {
-        padding-top: 30rpx;
+        margin: 10rpx;
         font-size: 32rpx;
         font-weight: bold;
         color: var(--themeColor);
     }
 
-    .goods_info_content {}
+    .goods_info_content {
+        margin: 10rpx;
+
+        .goods_all_name {
+            color: rgb(150, 150, 150);
+        }
+    }
 }
 
 .bottom_tool {

@@ -1,0 +1,38 @@
+page {
+  background-color: whitesmoke;
+}
+.goods_comment_wrap {
+  margin: 10rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  box-shadow: 0rpx 0rpx 10rpx #c8c8c8;
+}
+.goods_comment_wrap .user_info_wrap {
+  padding: 20rpx;
+  padding-bottom: 0;
+  display: flex;
+}
+.goods_comment_wrap .user_info_wrap image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  box-shadow: 0rpx 0rpx 10rpx #c8c8c8;
+}
+.goods_comment_wrap .user_info_wrap .user_name {
+  padding-left: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goods_comment_wrap .comment_info_wrap {
+  padding: 20rpx;
+  padding-top: 0;
+}
+.goods_comment_wrap .comment_info_wrap .comment_time {
+  font-size: 24rpx;
+  color: gray;
+}
+.goods_comment_wrap .comment_info_wrap .comment-info {
+  padding-top: 10rpx;
+  font-weight: bold;
+}

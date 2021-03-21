@@ -25,6 +25,7 @@
 .user .user_info .icon-dizhi {
   flex: 1;
   display: flex;
+  color: orangered;
   justify-content: center;
   align-items: center;
 }
@@ -38,11 +39,14 @@ page {
   background-color: whitesmoke;
   padding-bottom: 90rpx;
 }
-.cart_content .cart_title {
+.cart_content .cart_main .icon-gouwu {
+  font-size: 38rpx;
+  font-weight: bold;
   text-align: center;
   color: var(--themeColor);
 }
 .cart_content .cart_main .cart_item {
+  box-shadow: 0rpx 0rpx 10rpx #c8c8c8;
   display: flex;
   margin: 10rpx;
   padding-top: 20rpx;

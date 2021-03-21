@@ -41,7 +41,7 @@ page {
   background-color: whitesmoke;
   border-radius: 15rpx;
   font-size: 38rpx;
-  padding: 30rpx;
+  padding: 20rpx;
 }
 .user_content {
   position: relative;
@@ -108,7 +108,7 @@ page {
 }
 .user_content .user_main .app_info_wrap .app_info_item {
   padding: 20rpx;
-  border-bottom: 1rpx solid whitesmoke;
+  border-bottom: 1rpx solid #eee;
 }
 .user_content .user_main .app_info_wrap .app_info_contact {
   display: flex;

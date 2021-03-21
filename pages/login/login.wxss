@@ -3,3 +3,8 @@ button{
     margin-top: 40rpx;
     width: 70%;
 }
+.tips{
+text-align:center;
+margin-top: 20rpx;
+color: gray;
+}

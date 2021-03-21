@@ -9,15 +9,15 @@
 }
 
 .user {
-    box-shadow:  0rpx 0rpx 10rpx rgb(200, 200, 200);
+    box-shadow: 0rpx 0rpx 10rpx rgb(200, 200, 200);
     border-radius: 20rpx;
     background-color: white;
     margin: 10rpx;
-
+   
     .user_info {
 
         display: flex;
-
+    
         .user_name {
             margin: 10rpx;
             font-weight: bold;
@@ -32,6 +32,7 @@
         .icon-dizhi {
             flex: 1;
             display: flex;
+            color: orangered;
             justify-content: center;
             align-items: center;
 
@@ -41,7 +42,7 @@
     }
 
     .user_address {
-        
+
         padding-bottom: 20rpx;
         display: flex;
         margin: 10rpx;
@@ -56,17 +57,18 @@ page {
 }
 
 .cart_content {
-    .cart_title {
-        
-        text-align: center;
-        color: var(--themeColor);
-       
-       
-    }
+
 
     .cart_main {
+        .icon-gouwu {
+            font-size: 38rpx;
+            font-weight: bold;
+            text-align: center;
+            color: var(--themeColor);
+        }
 
         .cart_item {
+            box-shadow: 0rpx 0rpx 10rpx rgb(200, 200, 200);
             display: flex;
             margin: 10rpx;
             padding-top: 20rpx;

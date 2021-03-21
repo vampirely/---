@@ -17,28 +17,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsObj: {}
+    goodsObj: {},
+    isCollect: false
   },
   goodsInfo: [],
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    const goods_id = options.goods_id;
+  // onLoad: function (options) {
+
+  //   const goods_id = options.goods_id; //从详细页面获取传送来的商品id
+  //   this.getGoodDetail(goods_id);
+  // },
+  onShow: function () {
+    let pages = getCurrentPages();
+    let currentPage = pages[pages.length - 1];
+    let options = currentPage.options;
+    const {
+      goods_id
+    } = options;
     this.getGoodDetail(goods_id);
+
+
+
+
   },
   //获取商品的详细数据
   async getGoodDetail(goods_id) {
     const res = await request({
-      url: "/goods/detail",
+      url: "/goodsDetail",
       data: {
         goods_id
       }
     });
     this.goodsInfo = res.data.message;
-    console.log(this.goodsInfo);
+    //获取缓存中的收藏
+    let collect = wx.getStorageSync("collect") || [];
+    let isCollect = collect.some(v => v.goods_id === this.goodsInfo.goods_id);
     this.setData({
-      goodsObj: res.data.message
+      goodsObj: res.data.message,
+      isCollect
     })
   },
   //点击图片调用api
@@ -53,36 +71,69 @@ Page({
 
   },
   //加入购物车
-  handleCartAdd(){
-   /* 获取缓存中的购物车数组 */
-  /*  data = data || [];
-   易点的写法应该是这样吧 data = data ? data : []; */
-   let  cart = wx.getStorageSync("Cart")||[];
+  handleCartAdd() {
+    /* 获取缓存中的购物车数组 */
+    /*  data = data || [];
+     易点的写法应该是这样吧 data = data ? data : []; */
+    let cart = wx.getStorageSync("Cart") || [];
 
-   //判断商品对象是否存在于购物车数组中\
-   let index=cart.findIndex(v=>v.goods_id===this.goodsInfo.goods_id);
-   if(index===-1){
-     //不存在 第一次添加
-     this.goodsInfo.num=1;//手动添加的数据
-     this.goodsInfo.IsChecked=true;
-     cart.push(this.goodsInfo);
-
-
-   }else{
-     //已经存在购物车数据 num++
-     cart[index].num++;
-   }
-   wx.setStorageSync("Cart", cart);
-     
-   wx.showToast({
-     title: '加入成功',
-     icon: 'success',
-     mask: true
-   });
-     
+    //判断商品对象是否存在于购物车数组中\
+    let index = cart.findIndex(v => v.goods_id === this.goodsInfo.goods_id);
+    if (index === -1) {
+      //不存在 第一次添加
+      this.goodsInfo.num = 1; //手动添加的数据
+      this.goodsInfo.IsChecked = true;
+      cart.push(this.goodsInfo);
 
 
-     
+    } else {
+      //已经存在购物车数据 num++
+      cart[index].num++;
+    }
+    wx.setStorageSync("Cart", cart);
+
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      mask: true
+    });
+
+
+
+
+  }, //商品收藏
+  handleCollect() {
+    let isCollect = false;
+    //获取缓存中的收藏
+    let collect = wx.getStorageSync("collect")||[];
+    let index = collect.findIndex(v => v.goods_id === this.goodsInfo.goods_id);
+    //idnex!=-1 表示收藏过了
+    if (index != -1) {
+      collect.splice(index, 1) //删除数组中的收藏
+      isCollect = false;
+      wx.showToast({
+        title: '取消收藏',
+        icon: 'none',
+        image: '',
+        duration: 500,
+        mask: true 
+      });
+        
+    } else {
+      collect.push(this.goodsInfo);
+      isCollect = true;
+      wx.showToast({
+        title: '收藏成功',
+        icon: 'none',
+        image: '',
+        duration: 500,
+        mask: true 
+      });
+    }
+    wx.setStorageSync("collect", collect);
+    this.setData({
+      isCollect
+    });
   }
 
 })

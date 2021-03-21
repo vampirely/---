@@ -7,27 +7,20 @@
         </view>
     </view>
     <view wx:else class="user_btn">
-        <navigator url="/pages/login/login" open-type="navigate">点击登录</navigator>
+        <navigator url="/pages/login/login" open-type="navigate" hover-class="none">
+            登录/注册
+        </navigator>
     </view>
-
 </view>
 <view class="user_content">
     <view class="user_main">
         <!-- 历史足迹 -->
         <view class="history_wrap">
-            <navigator>
-                <view class="his_num">0</view>
-                <view class="his_name">收藏的店铺</view>
-            </navigator>
-            <navigator>
-                <view class="his_num">0</view>
+            <navigator hover-class="none" url="/pages/collect/collect">
+                <view class="his_num">{{collectNums}}</view>
                 <view class="his_name">收藏的商品</view>
             </navigator>
-            <navigator>
-                <view class="his_num">0</view>
-                <view class="his_name">关注的商品</view>
-            </navigator>
-            <navigator>
+            <navigator hover-class="none">
                 <view class="his_num">0</view>
                 <view class="his_name">我的足迹</view>
             </navigator>
@@ -52,25 +45,21 @@
                     <view class="iconfont icon-tuikuan"></view>
                     <view class="order_name">退款/退货</view>
                 </navigator>
-                 
             </view>
-            
         </view>
         <!-- 收货地址管理 -->
         <view class="address_wrap" bindtap="handleChooseAddress">收货地址管理</view>
         <!-- 应用信息相关 -->
         <view class="app_info_wrap">
             <view class="app_info_item app_info_contact">
-                <text>联系客服</text>
-                <text></text>
+                <view>联系客服</view>
             </view>
             <view class="app_info_item">
-                <text>意见反馈</text>
+                <view bindtap="handleFeedback">意见反馈</view>
             </view>
             <view class="app_info_item">
-                <text>关于</text>
-            </view>   
+                <view bindtap="handleAbout">关于</view>
+            </view>
         </view>
-      
     </view>
 </view>

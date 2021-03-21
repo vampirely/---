@@ -1,26 +1,17 @@
+import regeneratorruntime from '../../lib/runtime/runtime';
+import {
+  request
+} from "../../request/index.js"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{}
-
+    userInfo: {},
+    collectNums: 0
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-  
+  //收货地址管理
   handleChooseAddress() {
     wx.chooseAddress({
       success: (address) => {
@@ -28,48 +19,38 @@ Page({
       }
     });
   },
+  //意见反馈
+  handleFeedback() {
+    wx.navigateTo({
+      url: '/pages/feedback/feedback',
+      success: (result) => {
+
+      }
+    });
+
+  },
+  //关于
+  handleAbout(){
+wx.showModal({
+  title: '关于',
+  content: '基于微信小程序的手机端在线商城设计',
+  showCancel: true,
+  cancelText: '取消',
+  cancelColor: '#000000',
+  confirmText: '确定',
+  confirmColor: '#3CC51F'
+});
+  
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
     const userInfo = wx.getStorageSync("userInfo");
+    const collect = wx.getStorageSync("collect");
     this.setData({
-      userInfo
+      userInfo,
+      collectNums: collect.length
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

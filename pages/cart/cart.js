@@ -79,9 +79,10 @@ Page({
     this.setCart(cart);
 
   },
- async handlePay() {
+  async handlePay() {
     const {
-      address,totalNum
+      address,
+      totalNum
     } = this.data;
     if (!address.userName) {
       wx.showToast({
@@ -91,33 +92,38 @@ Page({
         duration: 1500,
         mask: false,
         success: (result) => {
-          return;
+          console.log(address.userName);
         }
       });
     }
-    if (totalNum===0) {
+   else if (totalNum === 0) {
       wx.showToast({
-        title: '购物车为空',
+        title: '未选择商品或购物车为空',
         icon: 'none',
         image: '',
         duration: 1500,
         mask: false,
         success: (result) => {
-          return;
+          console.log(totalNum);
+
         }
       });
     }
-
-//跳转支付界面
-wx.navigateTo({
+else{
+ //跳转支付界面
+ wx.navigateTo({
   url: '/pages/pay/pay'
-  
+
 });
-  
+}
+   
+    
+
+
 
   },
   //商品数量编辑
- async handleItemNumEdit(e) {
+  async handleItemNumEdit(e) {
     //1 获取操作参数
     const {
       operation,
@@ -149,7 +155,7 @@ wx.navigateTo({
 
   },
   //onLoad onShow
-  
+
   onShow() {
     //获取缓存中的地址
     const address = wx.getStorageSync("address");
