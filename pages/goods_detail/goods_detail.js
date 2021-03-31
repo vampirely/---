@@ -53,11 +53,14 @@ Page({
     this.goodsInfo = res.data.message;
     //获取缓存中的收藏
     let collect = wx.getStorageSync("collect") || [];
+    let history = wx.getStorageSync("history") || [];
     let isCollect = collect.some(v => v.goods_id === this.goodsInfo.goods_id);
     this.setData({
       goodsObj: res.data.message,
       isCollect
     })
+    history.push(this.goodsInfo);
+    wx.setStorageSync("history", history);
   },
   //点击图片调用api
   handlePreviewImage(e) {
@@ -91,7 +94,6 @@ Page({
       cart[index].num++;
     }
     wx.setStorageSync("Cart", cart);
-
     wx.showToast({
       title: '加入成功',
       icon: 'success',
@@ -134,6 +136,21 @@ Page({
     this.setData({
       isCollect
     });
+  },
+  //立即购买
+  handlePayNow(){
+    let paynowgoods = wx.getStorageSync("goodNow")||[];
+    wx.setStorageSync("goodsNow", [])
+    paynowgoods.push(this.goodsInfo);
+    wx.setStorageSync("goodsNow", paynowgoods);
+    wx.navigateTo({
+      url: '/pages/paynow/paynow',
+      success: (result) => {  
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+      
   }
 
 })

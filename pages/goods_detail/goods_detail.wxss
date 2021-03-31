@@ -9,8 +9,8 @@
   text-align: center;
 }
 .info_wrap .detal_swiper swiper image {
-  margin-top: 15rpx;
-  width: 70%;
+  margin-bottom: 50rpx;
+  width: 65%;
 }
 .info_wrap .goods_price {
   margin-left: 10rpx;

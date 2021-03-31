@@ -1,8 +1,8 @@
 <view class="BtnDel">
-    <button class="clearBtn" type="warn"  hover-class="none" bindtap="handleClearAll">清空</button>
+    <button class="clearBtn" type="warn" hover-class="none" bindtap="handleClearAll">清空</button>
 </view>
 <view class="first_tab">
-    <view class="goods_item"  wx:for="{{collectObj}}" wx:key="goods_id" wx:for-item="item1" >
+    <view class="goods_item" wx:for="{{historyObj}}" wx:key="goods_id" wx:for-item="item1">
         <!-- 左侧 图片 -->
         <navigator hover-class="none" class="goods_img" url="/pages/goods_detail/goods_detail?goods_id={{item1.goods_id}}">
             <image mode="widthFix" lazy-load="{{true}}" src="{{item1.goods_small_logo}}"></image>
@@ -11,7 +11,7 @@
         <view class="good_info">
             <view class="goods_name">{{item1.goods_name}}</view>
             <view class="goods_price">¥{{item1.goods_price}}</view>
-            <view class="goods_cancel" data-index="{{index}}" bindtap="handleCollectCancel">取消收藏</view>
+            <view class="iconfont icon-shanchu"  data-index='{{index}}' bindtap="handleHistoryCancel"></view>
         </view>
         <!-- 右侧 价格 -->
     </view>

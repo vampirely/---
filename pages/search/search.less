@@ -8,9 +8,12 @@
   border-top: 1rpx solid #D7D6DC;
   border-bottom: 1rpx solid #E6E6EA;
 }
+
 .weui-icon-search_in-box {
   height: 100%;
+ 
 }
+
 .weui-search-bar__form {
   flex: auto;
   border-radius: 10rpx;
@@ -18,59 +21,74 @@
   border: 1rpx solid #E6E6EA;
   margin: 10rpx;
   height: 70rpx;
-  justify-content: center;
+justify-content: center;
 }
+
 .weui-search-bar__box {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   display: flex;
 }
+
 .weui-search-bar__input {
   border-left: 1rpx solid #E6E6EA;
   font-size: 30rpx;
   width: 100%;
   height: 100%;
 }
+
 .weui-search-bar__serach-btn {
+
   color: #39A7F2;
   padding-top: 20rpx;
   padding-right: 10rpx;
   border-radius: 20rpx;
+ 
 }
+
+
 .first_tab {
-  margin-top: 100rpx;
+
+margin-top: 100rpx;
+  .goods_item {
+    background-color: white;
+    margin: 10rpx;
+    border-radius: 20rpx;
+    display: flex;
+
+    .goods_img {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      image {
+        padding: 5rpx;
+        height: auto;
+        width: 65%;
+      }
+    }
+
+    .good_info {
+
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .goods_name {
+        display: -webkit-inline-box;
+        overflow: hidden;
+      }
+
+      .goods_price {
+        color: var(--themeColor);
+      }
+    }
+  }
 }
-.first_tab .goods_item {
-  background-color: white;
-  margin: 10rpx;
-  border-radius: 20rpx;
-  display: flex;
-}
-.first_tab .goods_item .goods_img {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.first_tab .goods_item .goods_img image {
-  padding: 5rpx;
-  height: auto;
-  width: 65%;
-}
-.first_tab .goods_item .good_info {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.first_tab .goods_item .good_info .goods_name {
-  display: -webkit-inline-box;
-  overflow: hidden;
-}
-.first_tab .goods_item .good_info .goods_price {
-  color: var(--themeColor);
-}
+
 page {
   background-color: whitesmoke;
 }

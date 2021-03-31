@@ -20,8 +20,8 @@
                 <view class="his_num">{{collectNums}}</view>
                 <view class="his_name">收藏的商品</view>
             </navigator>
-            <navigator hover-class="none">
-                <view class="his_num">0</view>
+            <navigator hover-class="none" url="/pages/history/history">
+                <view class="his_num">{{historyNums}}</view>
                 <view class="his_name">我的足迹</view>
             </navigator>
         </view>

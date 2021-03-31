@@ -65,6 +65,7 @@ Page({
       },
       //点击支付
       handleOrderPay(){
+        
           //判断缓存中有没有token
            const token =wx.getStorageSync("token");
            if(!token){

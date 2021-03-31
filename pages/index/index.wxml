@@ -9,7 +9,7 @@
         <swiper autoplay="{{true}}" circular="{{true}}" interval="3000" indicator-dots="{{true}}">
             <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
                 <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" open-type="navigate">
-                    <image mode="scaleToFill" src="{{item.goods_small_logo}}"></image>
+                    <image mode="aspectFit" src="{{item.goods_small_logo}}"></image>
                 </navigator>
             </swiper-item>
         </swiper>

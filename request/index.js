@@ -5,6 +5,7 @@ export const request = (params) => {
     //const baseUrl = "https://api-hmugo-web.itheima.net/api/public/v1"
      //const baseUrl = "https://49.235.230.192:3001/api"
      const baseUrl = "https://127.0.0.1:3001/api"
+     //const baseUrl="https://lihuan.work:3001/api"
     return new Promise((resolve, reject) => {
         ajaxTimes++;
         //显示加载中

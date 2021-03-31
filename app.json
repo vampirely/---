@@ -14,11 +14,13 @@
     "pages/feedback/feedback",
     "pages/login/login",
     "pages/auth/auth",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/history/history",
+    "pages/paynow/paynow"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#FF0000",
+    "navigationBarBackgroundColor": "#39A7F2",
     "navigationBarTitleText": "雷磁购",
     "navigationBarTextStyle":"white"
   },

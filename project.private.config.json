@@ -83,6 +83,23 @@
           "pathName": "pages/goods_comment/comment",
           "query": "goods_id=1",
           "scene": null
+        },
+        {
+          "name": "足迹",
+          "pathName": "pages/history/history",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "立即购买",
+          "pathName": "pages/paynow/paynow",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "搜素",
+          "pathName": "pages/search/search",
+          "scene": null
         }
       ]
     }

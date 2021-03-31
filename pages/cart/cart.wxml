@@ -14,37 +14,40 @@
         <view class="user_address">{{address.allAddress}}</view>
     </view>
     <!-- g购物车 -->
-    <view class="cart_content">
+    <view class="cartIsEmpty" wx:if="{{!cart.length}}">
+        <image src="https://lihuan.work:3001/images/cartEmpty.png" mode="widthFix" />
+    </view>
+    <view wx:else class="cart_content">
         <view class="cart_main">
             <view class="iconfont icon-gouwu"></view>
-            <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
-                <!-- checkbox -->
-                <view class="cart_checkbox">
-                    <checkbox-group data-id="{{item.goods_id}}" bindchange="handleItemChange">
-                        <checkbox checked="{{item.IsChecked}}"></checkbox>
-                    </checkbox-group>
-                </view>
-                <!-- image -->
-                <navigator class="cart_image">
-                    <image mode="widthFix" src="{{item.goods_small_logo}}" />
-                </navigator>
-                <!-- info -->
-                <view class="cart_goodsinfo">
-                    <view class="cart_goods_name">{{item.goods_name}}</view>
-                    <view class="cart_goods_pricewrap">
-                        <view class="cart_goods_price">¥{{item.goods_price}}</view>
-                        <view class="cart_num_tool">
-                            <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.goods_id}}" data-operation="{{-1}}">
-                                -
-                            </view>
-                            <view class="goods_num">{{item.num}}</view>
-                            <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.goods_id}}" data-operation="{{1}}">
-                                +
+                <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+                    <!-- checkbox -->
+                    <view class="cart_checkbox">
+                        <checkbox-group data-id="{{item.goods_id}}" bindchange="handleItemChange">
+                            <checkbox checked="{{item.IsChecked}}"></checkbox>
+                        </checkbox-group>
+                    </view>
+                    <!-- image -->
+                    <navigator class="cart_image">
+                        <image mode="widthFix" src="{{item.goods_small_logo}}" />
+                    </navigator>
+                    <!-- info -->
+                    <view class="cart_goodsinfo">
+                        <view class="cart_goods_name">{{item.goods_name}}</view>
+                        <view class="cart_goods_pricewrap">
+                            <view class="cart_goods_price">¥{{item.goods_price}}</view>
+                            <view class="cart_num_tool">
+                                <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.goods_id}}" data-operation="{{-1}}">
+                                    -
+                                </view>
+                                <view class="goods_num">{{item.num}}</view>
+                                <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.goods_id}}" data-operation="{{1}}">
+                                    +
+                                </view>
                             </view>
                         </view>
                     </view>
                 </view>
-            </view>
         </view>
     </view>
     <!-- 底部tool -->

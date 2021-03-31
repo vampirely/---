@@ -9,7 +9,8 @@ Page({
    */
   data: {
     userInfo: {},
-    collectNums: 0
+    collectNums: 0,
+    historyNums:0
   },
   //收货地址管理
   handleChooseAddress() {
@@ -48,9 +49,11 @@ wx.showModal({
   onShow: function () {
     const userInfo = wx.getStorageSync("userInfo");
     const collect = wx.getStorageSync("collect");
+    const myhistory=wx.getStorageSync("history");
     this.setData({
       userInfo,
-      collectNums: collect.length
+      collectNums: collect.length,
+      historyNums:myhistory.length
     })
   }
 })

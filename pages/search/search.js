@@ -1,66 +1,33 @@
-// pages/search/search.js
+import {
+  request
+} from "../../request/index.js";
+import regeneratorruntime from '../../lib/runtime/runtime';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    goodList: []
+  },
+  //接口要的参数
+  QueryParams: {
+    keyword: ""
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleSearch() {
+    this.getGoodsList();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleSearchValue(e) {
+    this.QueryParams.keyword = e.detail.value;
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  async getGoodsList() {
+    const res = await request({
+      url: "/search",
+      data: this.QueryParams
+    });
+    this.setData({
+      goodList: res.data.message
+    })
   }
 })
