@@ -34,7 +34,8 @@ Page({
       }
 
     ],
-    goodsList: []
+    goodsList: [],
+    loading:true
 
   },
   //接口要的参数
@@ -90,6 +91,7 @@ Page({
     this.totalPages = Math.ceil(total / this.QueryParams.pagesize);
     //console.log(this.totalPages);
     this.setData({
+      loading:false,
       goodsList: [...this.data.goodsList, ...res.data.message.goods] //拼接数组
     })
     //关闭下来刷新效果

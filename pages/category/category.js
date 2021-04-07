@@ -16,7 +16,8 @@ Page({
     //被点击的左侧菜单
     currentIndex: 0,
     //右侧内容的滚动条离顶部距离
-    scrollTop: 0
+    scrollTop: 0,
+    loading:true
   },
   Cates: [],
   /**
@@ -55,27 +56,6 @@ Page({
     }
   },
   async getCates() {
-    // request({
-    //     url: "/categories"
-    //   })
-    //   .then(res => {
-
-    //     this.Cates = res.data.message;
-    //     //把接口的数据存入到本地储存中
-    //     wx.setStorageSync("cates", {
-    //       time: Date.now(),
-    //       data: this.Cates
-    //     });
-
-    //     //构造左侧菜单数据
-    //     let leftMenuList = this.Cates.map(v => v.cat_name);
-    //     //构造右侧商品数据
-    //     let rightContent = this.Cates[0].children;
-    //     this.setData({
-    //       leftMenuList,
-    //       rightContent
-    //     })
-    //   })
     const res = await request({
       url: "/categories"
     });
@@ -83,7 +63,8 @@ Page({
     //把接口的数据存入到本地储存中
     wx.setStorageSync("cates", {
       time: Date.now(),
-      data: this.Cates
+      data: this.Cates,
+      loading:false
     });
 
     //构造左侧菜单数据
@@ -92,8 +73,10 @@ Page({
     let rightContent = this.Cates[0].children;
     this.setData({
       leftMenuList,
-      rightContent
+      rightContent,
+      loading:false
     })
+    wx.stopPullDownRefresh();
   },
   //左侧点击事件
   handleItemTap(e) {
@@ -110,6 +93,9 @@ Page({
       rightContent,
       scrollTop: 0
     })
+  },  
+  onPullDownRefresh: function () {
+    this.onLoad();
   }
 
 })

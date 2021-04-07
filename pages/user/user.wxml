@@ -34,8 +34,8 @@
                     <view class="order_name">全部订单</view>
                 </navigator>
                 <navigator>
-                    <view class="iconfont icon-daifukuan"></view>
-                    <view class="order_name">待付款</view>
+                    <view class="iconfont icon-pingjia"></view>
+                    <view class="order_name">待评价</view>
                 </navigator>
                 <navigator>
                     <view class="iconfont  icon-daishouhuo"></view>
@@ -59,6 +59,9 @@
             </view>
             <view class="app_info_item">
                 <view bindtap="handleAbout">关于</view>
+            </view>
+            <view class="app_info_item" style="background-color:#FF0000; border-bottom-right-radius:20rpx;border-bottom-left-radius:20rpx;">
+                <view bindtap="handleExit" style="color:white; display: flex;align-items: center;justify-content: center;">退出登录</view>
             </view>
         </view>
     </view>

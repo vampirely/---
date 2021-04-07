@@ -18,7 +18,8 @@ Page({
    */
   data: {
     goodsObj: {},
-    isCollect: false
+    isCollect: false,
+    loading:true
   },
   goodsInfo: [],
   /**
@@ -57,14 +58,15 @@ Page({
     let isCollect = collect.some(v => v.goods_id === this.goodsInfo.goods_id);
     this.setData({
       goodsObj: res.data.message,
-      isCollect
+      isCollect,
+      loading:false
     })
     history.push(this.goodsInfo);
     wx.setStorageSync("history", history);
   },
   //点击图片调用api
   handlePreviewImage(e) {
-    const image_urls = this.goodsInfo.pics.map(v => v.pics_big);
+    const image_urls = this.goodsInfo.pics.map(v => v.pics_mid);
     const current = e.currentTarget.dataset.url;
     wx.previewImage({
       current: current,

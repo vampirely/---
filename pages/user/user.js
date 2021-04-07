@@ -12,6 +12,11 @@ Page({
     collectNums: 0,
     historyNums:0
   },
+  handleExit(){
+    wx.removeStorageSync("userInfo");
+    wx.removeStorageSync("token");
+    this.onShow();
+  },
   //收货地址管理
   handleChooseAddress() {
     wx.chooseAddress({

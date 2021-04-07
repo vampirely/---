@@ -1,5 +1,7 @@
 <!-- pages/category/category.wxml -->
-<view class="cates">
+<import src="category.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+<view wx:else class="cates">
     <!-- search开始 -->
     <SerchInput></SerchInput>
     <!-- search结束 -->

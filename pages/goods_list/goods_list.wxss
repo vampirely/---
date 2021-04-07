@@ -1,3 +1,4 @@
+@import "./goods_list.skeleton.wxss";
 .first_tab .goods_item {
   background-color: white;
   margin: 10rpx;

@@ -1,4 +1,6 @@
-<view class="lcg_index">
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+<view wx:else class="lcg_index">
     <!-- search开始 -->
     <SerchInput></SerchInput>
     <!-- search结束 -->

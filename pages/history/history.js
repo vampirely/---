@@ -27,7 +27,7 @@ historyObj:[]
         historyObj: list
       })
       wx.showToast({
-        title: '已取消',
+        title: '已删除',
         icon: 'none',
         image: '',
         duration: 500,

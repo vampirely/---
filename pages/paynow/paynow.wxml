@@ -3,7 +3,7 @@
         <view class="user_info">
             <view class="user_name">{{address.userName}}</view>
             <view class="user_phone">{{address.telNumber}}</view>
-            <view class="iconfont icon-dizhi">></view>
+            <view class="iconfont icon-dizhi">+</view>
         </view>
         <view class="user_address">{{address.allAddress}}</view>
     </view>

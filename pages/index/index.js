@@ -5,7 +5,8 @@ Page({
     //轮播图数组
     swiperList: [],
     //loucen数组
-    floorList: []
+    floorList: [],
+    loading:true
 
   },
   //options(Object)页面开始加载触发
@@ -18,10 +19,13 @@ Page({
   getSwiperList() {
     request({ url: "/swiperdata" })
       .then(result => {
+        
         this.setData({
-          swiperList: result.data.message
+          swiperList: result.data.message,
+          loading:false
         })
       })
+      
       wx.stopPullDownRefresh();
   }
   ,
@@ -30,7 +34,8 @@ Page({
     request({ url: "/goodsIndex" })
       .then(result => {
         this.setData({
-          floorList: result.data.message
+          floorList: result.data.message,
+          loading:false
         })
       })
       wx.stopPullDownRefresh();
@@ -39,6 +44,9 @@ Page({
   * 页面相关事件处理函数--监听用户下拉动作
   */
    onPullDownRefresh: function () {
+    this.setData({
+      loading:true
+    })
     this.getSwiperList();
     this.getFloorList();
   }

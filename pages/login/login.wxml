@@ -1,3 +1,15 @@
-<!--pages/login/login.wxml-->
-<button type="primary" plain="{{true}}" bindgetuserinfo="handleGetUserInfo" open-type="getUserInfo" >登录</button>
+<view class='header'>
+    <image src='/icons/wx_login.png'></image>
+</view>
+<view class='content'>
+    <view>申请获取以下权限</view>
+    <text>●获得你的公开信息(昵称，头像，性别等)</text>
+</view>
+<view class="container">
+    <view class="userinfo">
+        <block >
+            <button type="primary" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">获取头像昵称</button>
+        </block>
+    </view>
+</view>
 <view class="tips">未注册的微信用户将使用微信快速注册。</view>
