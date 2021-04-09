@@ -93,6 +93,14 @@ page {
   color: var(--themeColor);
   font-size: 40rpx;
 }
+.user_content .user_main .orders_wrap .order_content navigator .wsui-btn__hover_btn {
+  opacity: 0.9;
+  transform: scale(0.95, 0.95);
+  position: relative;
+  top: 3rpx;
+  left: 3rpx;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1) inset;
+}
 .user_content .user_main .address_wrap {
   box-shadow: 0rpx 0rpx 10rpx #c8c8c8;
   border-radius: 20rpx;

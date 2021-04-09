@@ -1,8 +1,7 @@
-@import "./goods_detail.skeleton.wxss";
 .info_wrap {
-  margin: 10rpx;
+  margin: 5rpx;
   border-radius: 20rpx;
-  box-shadow: 0rpx 0rpx 10rpx #646464;
+  box-shadow: 0rpx 0rpx 10rpx #969696;
   background-color: white;
 }
 .info_wrap .detal_swiper swiper {
@@ -49,7 +48,6 @@
   color: gray;
 }
 .goods_comment_wrap {
-  box-shadow: 0rpx 0rpx 10rpx #646464;
   border-radius: 20rpx;
   margin: 10rpx;
   background-color: white;
@@ -62,7 +60,7 @@
   margin: 10rpx;
   font-weight: bold;
 }
-.goods_comment_wrap .goods_comment_navi .goods_show_more {
+.goods_comment_wrap .goods_comment_navi .icon-more {
   flex: 1;
   margin: 10rpx;
   text-align: right;
@@ -70,7 +68,6 @@
   color: coral;
 }
 .goods_info {
-  box-shadow: 0rpx 0rpx 10rpx #646464;
   border-radius: 20rpx;
   margin: 10rpx;
   background-color: white;

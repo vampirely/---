@@ -1,1 +1,3 @@
-/* pages/order/order.wxss */
+page {
+  background-color: whitesmoke;
+}

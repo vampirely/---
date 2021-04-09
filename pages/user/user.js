@@ -10,9 +10,9 @@ Page({
   data: {
     userInfo: {},
     collectNums: 0,
-    historyNums:0
+    historyNums: 0
   },
-  handleExit(){
+  handleExit() {
     wx.removeStorageSync("userInfo");
     wx.removeStorageSync("token");
     this.onShow();
@@ -36,17 +36,27 @@ Page({
 
   },
   //关于
-  handleAbout(){
-wx.showModal({
-  title: '关于',
-  content: '基于微信小程序的手机端在线商城设计',
-  showCancel: true,
-  cancelText: '取消',
-  cancelColor: '#000000',
-  confirmText: '确定',
-  confirmColor: '#3CC51F'
-});
-  
+  handleAbout() {
+    wx.showModal({
+      title: '关于',
+      content: '毕设题目：基于Node.js的手机端在线商城设计',
+      showCancel: false,
+      cancelColor: '#000000',
+      confirmText: '确定',
+      confirmColor: '#3CC51F',
+      success: (result) => {
+        if (result.confirm) {
+          wx.showToast({
+            title: 'Hello',
+            image: '/icons/swust.png',
+            duration: 1500,
+          });
+        }
+      }
+    });
+
+
+
   },
   /**
    * 生命周期函数--监听页面显示
@@ -54,11 +64,11 @@ wx.showModal({
   onShow: function () {
     const userInfo = wx.getStorageSync("userInfo");
     const collect = wx.getStorageSync("collect");
-    const myhistory=wx.getStorageSync("history");
+    const myhistory = wx.getStorageSync("history");
     this.setData({
       userInfo,
       collectNums: collect.length,
-      historyNums:myhistory.length
+      historyNums: myhistory.length
     })
   }
 })

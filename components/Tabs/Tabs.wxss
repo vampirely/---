@@ -1,5 +1,4 @@
 /* components/tabs/Tabs.wxss */
-.tabs {}
 
 .tabs_title {
     display: flex;
@@ -16,7 +15,6 @@
 
 .active {
     color: var(--themeColor);
-    border-bottom: 5rpx solid currentColor;
+    border-bottom: 2rpx solid currentColor;
 }
 
-.tabs_content {}

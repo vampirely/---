@@ -2,7 +2,7 @@
     <button class="clearBtn" type="warn" hover-class="none" bindtap="handleClearAll">清空</button>
 </view>
 <view class="first_tab">
-    <view class="goods_item" wx:for="{{historyObj}}" wx:key="goods_id" wx:for-item="item1">
+    <view class="goods_item" wx:for="{{historyObj}}" wx:key="index" wx:for-item="item1">
         <!-- 左侧 图片 -->
         <navigator hover-class="none" class="goods_img" url="/pages/goods_detail/goods_detail?goods_id={{item1.goods_id}}">
             <image mode="widthFix" lazy-load="{{true}}" src="{{item1.goods_small_logo}}"></image>

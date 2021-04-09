@@ -47,7 +47,7 @@ historyObj:[]
           confirmColor: '#3CC51F',
           success: (result) => {
             if (result.confirm) {
-              wx.setStorageSync("history",[]);
+              wx.removeStorageSync("history");
               this.setData({
                 historyObj: []
               })

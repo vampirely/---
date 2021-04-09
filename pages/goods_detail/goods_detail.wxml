@@ -21,13 +21,16 @@
     <view class="goods_comment_wrap">
         <navigator class="goods_comment_navi" url="/pages/goods_comment/comment?goods_id={{goodsObj.goods_id}}" hover-class="none">
             <view class="goods_comment">商品评价</view>
-            <view class="goods_show_more">查看 >></view>
+            <view class="iconfont icon-more"></view>
         </navigator>
     </view>
     <view class="goods_info">
         <view class="goods_info_title">图文详情</view>
         <view class="goods_info_content">
             <view class="goods_all_name">商品名称：{{goodsObj.goods_name}}</view>
+            <view class="goods_detailPics" wx:for="{{goodsDetailPics}}" wx:key="index">
+                <image mode="widthFix" lazy-load="{{true}}" src="{{item.detail_pic}}"></image>
+            </view>
         </view>
     </view>
     <view class="bottom_tool">

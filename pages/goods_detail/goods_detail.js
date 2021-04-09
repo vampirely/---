@@ -18,6 +18,7 @@ Page({
    */
   data: {
     goodsObj: {},
+    goodsDetailPics:[],
     isCollect: false,
     loading:true
   },
@@ -38,7 +39,7 @@ Page({
       goods_id
     } = options;
     this.getGoodDetail(goods_id);
-
+    this.getDetailPics(goods_id);
 
 
 
@@ -63,6 +64,19 @@ Page({
     })
     history.push(this.goodsInfo);
     wx.setStorageSync("history", history);
+  }, 
+  //获取商品的图文详情
+  async getDetailPics(goods_id) {
+    const res = await request({
+      url: "/DetailPics",
+      data: {
+        goods_id
+      }
+    });
+    this.setData({
+      goodsDetailPics:res.data.message.detail_pics,
+       loading:false
+     })
   },
   //点击图片调用api
   handlePreviewImage(e) {

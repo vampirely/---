@@ -34,6 +34,13 @@ Page({
             }).then(res => {
               if (res.data.status === 200) {
                 wx.setStorageSync("token", res.data.token);
+                wx.showToast({
+                  title: res.data.msg,
+                  icon: 'none',
+                  duration: 1500,
+                  mask: false,
+                });
+                  
               }
     
             })

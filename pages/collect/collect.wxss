@@ -17,6 +17,7 @@
   margin: 10rpx;
   border-radius: 20rpx;
   display: flex;
+  box-shadow: 0rpx 0rpx 10rpx #c8c8c8;
 }
 .first_tab .goods_item .goods_img {
   flex: 2;

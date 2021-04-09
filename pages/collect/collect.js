@@ -52,7 +52,7 @@ Page({
       confirmColor: '#3CC51F',
       success: (result) => {
         if (result.confirm) {
-          wx.setStorageSync("collect", []);
+          wx.removeStorageSync("collect");
           this.setData({
             collectObj: []
           })

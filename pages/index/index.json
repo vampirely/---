@@ -2,7 +2,7 @@
   "usingComponents": {
    "SerchInput" :"../../components/SearchInput/SearchInput"
   },
-  "navigationBarTitleText": "雷磁购首页",
+  "navigationBarTitleText": "首页",
   "enablePullDownRefresh": true, 
   "backgroundTextStyle": "dark" 
 }

@@ -1,9 +1,7 @@
 //t同时发送异步代码次数
 let ajaxTimes = 0;
 export const request = (params) => {
-    //定义公共url部分
-    //const baseUrl = "https://api-hmugo-web.itheima.net/api/public/v1"
-    //const baseUrl = "https://49.235.230.192:3001/api"
+    //定义公共url
     //const baseUrl = "https://127.0.0.1:3001/api"
     const baseUrl = "https://lihuan.work:3001/api"
     return new Promise((resolve, reject) => {
@@ -35,7 +33,8 @@ export const request = (params) => {
                                     wx.showToast({
                                         title: '请重新登录',
                                         icon: 'none',
-                                        duration: 1500,
+                                        image: '/icons/swust.png',
+                                        duration: 2500,
                                     });
                                 }
                             });

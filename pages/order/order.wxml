@@ -1,2 +1,8 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<Tabs tabsItem="{{tabs}}" bindtabsItemChange="handleTabsChange">
+        <block wx:if="{{tabs[0].isActive}}">
+            
+        </block>
+        <block wx:elif="{{tabs[1].isActive}}">1</block>
+        <block wx:elif="{{tabs[2].isActive}}">2</block>
+        <block wx:elif="{{tabs[3].isActive}}">3</block>
+    </Tabs>
