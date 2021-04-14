@@ -42,3 +42,4 @@
         </scroll-view>
     </view>
 </view>
+<!-- <view wx-if="{{loading}}" class="iconfont icon-shuaxin"  bindtap="handleRefresh"></view> -->

@@ -20,7 +20,7 @@
             flex: 7;
         }
 
-        .icon-dizhi {
+        .icon-icon_function_xiugai {
             flex: 1;
             color: orangered;
             display: flex;
@@ -152,3 +152,92 @@ page {
         align-items: center;
     }
 }
+
+//////////////////////////////////支付弹窗
+.dialog__mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.dialog__container {
+    position: fixed;
+    bottom: 0;
+    width: 750rpx;
+    transform: translateY(200%);
+    transition: all 0.4s ease;
+    z-index: 11;
+    height: 100%;
+}
+
+.dialog--show .dialog__container {
+    transform: translateY(0);
+}
+
+view.flex_Center {
+    width: 600rpx;
+    height: 500rpx;
+    background: white;
+    color: #333;
+    font-size: 30rpx;
+    border-radius: 20rpx;
+
+    .tittle_wrap {
+        display: flex;
+       padding: 20rpx;
+        .cancel {
+
+            height: 9%;
+            width: 62rpx;
+            text-align: right;
+            margin-left: 10rpx;
+            border-radius: 10rpx;
+            padding: 2rpx;
+            color: rgb(255, 255, 255);
+            text-align: left;
+            font-size: 28rpx;
+            background-color:rgb(190, 190, 190);
+        }
+
+        .paytitle {
+            height: 10%;
+            width: 90%;
+            padding-left: 70rpx;
+            text-align: center;
+            font-weight: bolder;
+           
+        }
+    }
+
+    .info_wrap {
+        border-top: 1rpx solid rgb(200, 200, 200);
+       
+        .pay_tip {
+            margin-bottom: 30rpx;
+            text-align: center;
+            color: rgb(20, 117, 245);
+        }
+
+        .total_price_pay {
+            margin-top: 50rpx;
+            margin-bottom: 50rpx;
+            text-align: center;
+            font-size: 50rpx;
+            color: red;
+            
+        }
+    }
+}
+
+
+.dialog--show .dialog__mask {
+    display: block;
+}
+
+
+@import "../../components/Pwdinput/pwdinput.wxss";

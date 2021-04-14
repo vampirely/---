@@ -1,5 +1,4 @@
 /* pages/category/category.wxss */
-@import "./category.skeleton.wxss";
 page {
   height: 100%;
 }
@@ -58,4 +57,16 @@ page {
 .cates .cates_container .right_content .goods_group .goods_list navigator image {
   height: 100rpx;
   padding: 20rpx;
+}
+.icon-shuaxin {
+  position: absolute;
+  right: 340rpx;
+  font-size: 80rpx;
+  bottom: 40vh;
+  z-index: 300;
+  background: #ffffff;
+  width: 80rpx;
+  height: 80rpx;
+  color: #39A7F2;
+  border-radius: 20rpx;
 }

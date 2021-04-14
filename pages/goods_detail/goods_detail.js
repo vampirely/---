@@ -18,9 +18,10 @@ Page({
    */
   data: {
     goodsObj: {},
-    goodsDetailPics:[],
+    goodsDetailPics: [],
     isCollect: false,
-    loading:true
+    loading: true,
+    imgloading:0
   },
   goodsInfo: [],
   /**
@@ -60,11 +61,11 @@ Page({
     this.setData({
       goodsObj: res.data.message,
       isCollect,
-      loading:false
+      loading: false
     })
     history.push(this.goodsInfo);
     wx.setStorageSync("history", history);
-  }, 
+  },
   //获取商品的图文详情
   async getDetailPics(goods_id) {
     const res = await request({
@@ -74,9 +75,8 @@ Page({
       }
     });
     this.setData({
-      goodsDetailPics:res.data.message.detail_pics,
-       loading:false
-     })
+      goodsDetailPics: res.data.message.detail_pics,
+    })
   },
   //点击图片调用api
   handlePreviewImage(e) {
@@ -123,7 +123,7 @@ Page({
   handleCollect() {
     let isCollect = false;
     //获取缓存中的收藏
-    let collect = wx.getStorageSync("collect")||[];
+    let collect = wx.getStorageSync("collect") || [];
     let index = collect.findIndex(v => v.goods_id === this.goodsInfo.goods_id);
     //idnex!=-1 表示收藏过了
     if (index != -1) {
@@ -134,9 +134,9 @@ Page({
         icon: 'none',
         image: '',
         duration: 500,
-        mask: true 
+        mask: true
       });
-        
+
     } else {
       collect.push(this.goodsInfo);
       isCollect = true;
@@ -145,7 +145,7 @@ Page({
         icon: 'none',
         image: '',
         duration: 500,
-        mask: true 
+        mask: true
       });
     }
     wx.setStorageSync("collect", collect);
@@ -154,19 +154,24 @@ Page({
     });
   },
   //立即购买
-  handlePayNow(){
-    let paynowgoods = wx.getStorageSync("goodNow")||[];
-    wx.setStorageSync("goodsNow", [])
-    paynowgoods.push(this.goodsInfo);
-    wx.setStorageSync("goodsNow", paynowgoods);
+  handlePayNow() {
+    // let paynowgoods = wx.getStorageSync("goodNow") || [];
+    // wx.setStorageSync("goodsNow", [])
+    // paynowgoods.push(this.goodsInfo);
+    wx.setStorageSync("goodsNow", this.goodsInfo);
     wx.navigateTo({
       url: '/pages/paynow/paynow',
-      success: (result) => {  
-      },
+      success: (result) => {},
       fail: () => {},
       complete: () => {}
     });
-      
-  }
 
+  },
+  handleImgLoad() {
+    this.data.imgloading++;
+    if(this.data.imgloading===this.data.goodsDetailPics.length)
+    {
+      this.setData({imgloading:this.data.imgloading})
+    }
+  }
 })

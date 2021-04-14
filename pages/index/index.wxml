@@ -1,11 +1,11 @@
-<import src="index.skeleton.wxml"/>
+<import src="index.skeleton.wxml" />
 <template is="skeleton" wx-if="{{loading}}" />
 <view wx:else class="lcg_index">
     <!-- search开始 -->
     <SerchInput></SerchInput>
     <!-- search结束 -->
     <!-- 轮播图开始 -->
-    <view class="iconfont icon-huore">活动</view>
+    <view class="iconfont icon-icon-test">活动</view>
     <view class="index_swiper">
         <!-- swiper和image都存在默认高度和宽度 -->
         <swiper autoplay="{{true}}" circular="{{true}}" interval="3000" indicator-dots="{{true}}">
@@ -19,23 +19,18 @@
     <!-- 轮播图结束 -->
     <!-- 楼层开始 -->
     <view class="index_floor">
-        <view class="iconfont icon-huore">推荐</view>
+        <view class="iconfont icon-icon-test">推荐</view>
         <view class="goods_group">
             <view class="goods_list">
-                <navigator  hover-class="navigator-hover"
-                wx:for="{{floorList}}"
-                wx:key="goods_id"
-                wx:for-index="item1"
-                url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
-                open-type="navigate"
-                 >
+                <navigator hover-class="navigator-hover" wx:for="{{floorList}}" wx:key="goods_id" wx:for-index="item1" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" open-type="navigate">
                     <image mode="widthFix" src="{{item.goods_small_logo}}" lazy-load="true" />
                     <view class="goodsPrice">¥{{item.goods_price}}</view>
                     <view class="goodsName">{{item.goods_name}}</view>
                 </navigator>
             </view>
-            
         </view>
+        <view style="  text-align: center;color:gray;font-size: 26rpx;">没有了哟~</view>
     </view>
     <!-- 楼层结束 -->
 </view>
+<!-- <view wx-if="{{loading}}" class="iconfont icon-shuaxin"  bindtap="handleRefresh"></view> -->

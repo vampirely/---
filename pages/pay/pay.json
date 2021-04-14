@@ -1,4 +1,4 @@
 {
-  "usingComponents": {},
+  "usingComponents": {"paySix": "../../components/Pwdinput/pwdinput"},
   "navigationBarTitleText": "商品结算"
 }

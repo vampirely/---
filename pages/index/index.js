@@ -11,7 +11,7 @@ Page({
   },
   //options(Object)页面开始加载触发
   onLoad: function (options) {
-    
+    console.log("loading page")
     this.getSwiperList();
     this.getFloorList();
   },
@@ -44,10 +44,9 @@ Page({
   * 页面相关事件处理函数--监听用户下拉动作
   */
    onPullDownRefresh: function () {
-    this.setData({
-      loading:true
-    })
-    this.getSwiperList();
-    this.getFloorList();
+    this.onLoad();
+  },
+  handleRefresh(){
+    this.onLoad();
   }
 });

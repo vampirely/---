@@ -12,9 +12,16 @@ Page({
     collectNums: 0,
     historyNums: 0
   },
+  //退出登录
   handleExit() {
     wx.removeStorageSync("userInfo");
     wx.removeStorageSync("token");
+    wx.showToast({
+      title: '已退出',
+      icon: 'none',
+      duration: 1500,
+      mask: false
+    });
     this.onShow();
   },
   //收货地址管理

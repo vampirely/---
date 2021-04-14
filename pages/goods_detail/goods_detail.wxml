@@ -29,7 +29,10 @@
         <view class="goods_info_content">
             <view class="goods_all_name">商品名称：{{goodsObj.goods_name}}</view>
             <view class="goods_detailPics" wx:for="{{goodsDetailPics}}" wx:key="index">
-                <image mode="widthFix" lazy-load="{{true}}" src="{{item.detail_pic}}"></image>
+                <image class="deImg" mode="widthFix" bindload="handleImgLoad" data-id="{{index}}" lazy-load="{{true}}" src="{{item.detail_pic}}"></image>
+            </view>
+            <view style="display:flex;justify-content: center;">
+                <image wx:if="{{!imgloading}}" mode="widthFix" src="/icons/loading.gif" style="width:8%;opacity:0.4;"></image>
             </view>
         </view>
     </view>

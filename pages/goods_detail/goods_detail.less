@@ -1,3 +1,4 @@
+@import "./goods_detail.skeleton.wxss";
 .info_wrap {
     margin: 5rpx;
     border-radius: 20rpx;
@@ -32,7 +33,7 @@
             margin-bottom: 15rpx;
             flex: 5;
             color: black;
-            font-size: 30rpx;
+            font-size: 28rpx;
             padding: 0 10rpx;
             display: -webkit-box;
             overflow: hidden;
@@ -53,27 +54,31 @@
             }
 
 
-            .collect_text {color: gray;}
+            .collect_text {
+                color: gray;
+            }
         }
     }
 }
-.goods_comment_wrap{
-    
-        border-radius: 20rpx;
-        margin: 10rpx;
-        background-color: white;
+
+.goods_comment_wrap {
+
+    border-radius: 20rpx;
+    margin: 10rpx;
+    background-color: white;
+   
     .goods_comment_navi {
         display: flex;
-        
+       
         .goods_comment {
+           color: gray;
             flex: 1;
             margin: 10rpx;
-            font-weight: bold;
         }
-    
+
         .icon-more {
             flex: 1;
-            margin: 10rpx;
+            margin: 15rpx;
             text-align: right;
             font-size: 28rpx;
             color: coral;
@@ -89,10 +94,11 @@
     background-color: white;
 
     .goods_info_title {
+        text-align: center;
         margin: 10rpx;
-        font-size: 32rpx;
+        font-size: 30rpx;
         font-weight: bold;
-        color: var(--themeColor);
+        color:gray;
     }
 
     .goods_info_content {
@@ -100,6 +106,13 @@
 
         .goods_all_name {
             color: rgb(150, 150, 150);
+        }
+
+        .goods_detailPics {
+            .deImg {
+                height: auto;
+            }
+            
         }
     }
 }

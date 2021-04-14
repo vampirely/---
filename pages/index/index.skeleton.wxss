@@ -1,5 +1,5 @@
 /*
-此文件为开发者工具生成，生成时间: 2021/3/31 下午8:04:44
+此文件为开发者工具生成，生成时间: 2021/4/11 下午9:41:23
 
 在 C:\Users\BigMonsters\WeChatProjects\雷磁购\pages\index\index.wxss 中引入样式
 ```
@@ -11,9 +11,9 @@
 .sk-transparent {
     color: transparent !important;
   }
-.sk-text-14-2857-734 {
+.sk-text-14-2857-495 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 39.2000rpx;
+    background-size: 100% 38.3212rpx;
     position: relative !important;
   }
 .sk-text {
@@ -23,34 +23,34 @@
     color: transparent !important;
     background-repeat: repeat-y !important;
   }
-.sk-text-14-2857-206 {
+.sk-text-14-2857-294 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 44.8000rpx;
+    background-size: 100% 43.4307rpx;
     position: relative !important;
   }
-.sk-text-14-2857-600 {
+.sk-text-14-2857-133 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 44.8000rpx;
+    background-size: 100% 43.4307rpx;
     position: relative !important;
   }
-.sk-text-14-2857-584 {
+.sk-text-14-2857-916 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 42.0000rpx;
+    background-size: 100% 40.8759rpx;
     position: relative !important;
   }
-.sk-text-14-2857-501 {
+.sk-text-14-2857-419 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 39.2000rpx;
+    background-size: 100% 38.3212rpx;
     position: relative !important;
   }
-.sk-text-14-2857-256 {
+.sk-text-14-2857-858 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 42.0000rpx;
+    background-size: 100% 40.8759rpx;
     position: relative !important;
   }
-.sk-text-14-2857-18 {
+.sk-text-14-2857-777 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 39.2000rpx;
+    background-size: 100% 38.3212rpx;
     position: relative !important;
   }
 .sk-image {

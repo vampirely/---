@@ -1,9 +1,9 @@
 <view class="revive_address">
-    <view bindtap="handleChooseAddress" class="user">
+    <view  class="user">
         <view class="user_info">
             <view class="user_name">{{address.userName}}</view>
             <view class="user_phone">{{address.telNumber}}</view>
-            <view class="iconfont icon-dizhi"></view>
+           
         </view>
         <view class="user_address">{{address.allAddress}}</view>
     </view>
@@ -41,5 +41,25 @@
         </view>
         <!-- jiesuan -->
         <view class="order_pay_wrap" bindtap="handleOrderPay">支付({{totalNum}})</view>
+    </view>
+</view>
+<!-- 弹窗 -->
+<view wx:if="{{showCenterDialog}}" name="diaCenterView">
+    <view class="dialog {{ showCenterDialog ? 'dialog--show' : '' }}">
+        <view class="dialog__mask" />
+        <view class="dialog__container" style="display:flex;align-items:center;justify-content:center; margin-bottom: 100rpx;flex-direction:column;">
+            <!-- //此区域自定义视图 -->
+            <view class="flex_Center">
+                <view class="tittle_wrap">
+                    <view class="paytitle">支付确认</view>
+                    <view class="cancel" bindtap='onClickdiaCenterView'>取消</view>
+                </view>
+                <view class="info_wrap">
+                    <view class="total_price_pay">¥{{totalPrice}}</view>
+                    <view class="pay_tip">请输入支付密码</view>
+                    <paySix bindvalueSix="valueSix" input_value="{{inputData.input_value}}" value_length="{{inputData.value_length}}" isNext="{{inputData.isNext}}" get_focus="{{inputData.get_focus}}" focus_class="{{inputData.focus_class}}" value_num="{{inputData.value_num}}" height="{{inputData.height}}" width="{{inputData.width}}" see="{{inputData.see}}" interval="{{inputData.interval}}"></paySix>
+                </view>
+            </view>
+        </view>
     </view>
 </view>

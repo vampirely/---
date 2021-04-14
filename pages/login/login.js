@@ -23,13 +23,17 @@ Page({
       desc: '用于获取用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
         console.log('获取用户信息成功', res.userInfo);
+        wx.setStorageSync("user", res.userInfo);
         wx.login({
           //获取code
           success: function (res) {
             request({
               url: '/userLogin',
               data: {
-                code: res.code
+                code: res.code,
+                avatarUrl: wx.getStorageSync("user").avatarUrl,
+                nickName: wx.getStorageSync("user").nickName,
+                gender: wx.getStorageSync("user").gender
               }
             }).then(res => {
               if (res.data.status === 200) {
@@ -40,9 +44,9 @@ Page({
                   duration: 1500,
                   mask: false,
                 });
-                  
+
               }
-    
+
             })
           }
         });
@@ -58,9 +62,9 @@ Page({
             });
           }
         });
-          
-        
-       
+
+
+
       }
     })
   }

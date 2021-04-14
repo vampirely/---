@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60rpx;
+  height: 70rpx;
   background-color: #FFF;
   border-radius: 15rpx;
   color: gray;

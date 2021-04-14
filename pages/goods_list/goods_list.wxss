@@ -1,3 +1,105 @@
+/*
+此文件为开发者工具生成，生成时间: 2021/3/31 下午8:22:39
+
+在 C:\Users\BigMonsters\WeChatProjects\雷磁购\pages\goods_list\goods_list.wxss 中引入样式
+```
+@import "./goods_list.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+*/
+.sk-transparent {
+  color: transparent !important;
+}
+.sk-text-14-2857-707 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text {
+  background-origin: content-box !important;
+  background-clip: content-box !important;
+  background-color: transparent !important;
+  color: transparent !important;
+  background-repeat: repeat-y !important;
+}
+.sk-text-14-2857-57 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-432 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-200 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-552 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-952 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-911 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-567 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-270 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-150 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-708 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-285 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-717 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-text-14-2857-473 {
+  background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
+  background-size: 100% 39.2rpx;
+  position: relative !important;
+}
+.sk-image {
+  background: #EFEFEF !important;
+}
+.sk-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: transparent;
+}
 .first_tab .goods_item {
   background-color: white;
   margin: 10rpx;

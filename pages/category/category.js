@@ -96,6 +96,9 @@ Page({
   },  
   onPullDownRefresh: function () {
     this.onLoad();
+  },
+  handleRefresh(){
+    this.onLoad();
   }
 
 })
