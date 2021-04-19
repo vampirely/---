@@ -15,7 +15,7 @@
     </view>
     <!-- g购物车 -->
     <view class="cartIsEmpty" wx:if="{{!cart.length}}">
-        <image src="https://lihuan.work:3001/images/cartEmpty.png" mode="widthFix" />
+        <image src="https://img.lihuan.work/images/cartEmpty.png" mode="widthFix" />
     </view>
     <view wx:else class="cart_content">
         <view class="cart_main">

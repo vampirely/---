@@ -1,4 +1,3 @@
-
 import regeneratorruntime from '../../lib/runtime/runtime'; //小程序 es7 的async await 语法 在有的机型上不适用 需要下载facebook的 regenerator
 import {
   request
@@ -26,7 +25,7 @@ Page({
       interval: true, //是否显示间隔格子
     }
   },
-  goodsList:[],
+  goodsList: [],
   //onLoad onShow
   onShow() {
     //获取缓存中的地址
@@ -34,7 +33,7 @@ Page({
     //获取缓存中的购物车数据
     let goodsNow = wx.getStorageSync("goodsNow") || {};
     //过滤后的购物车数组
-    goodsNow.num=1;
+    goodsNow.num = 1;
     let totalPrice = goodsNow.goods_price;
     let totalNum = goodsNow.num;
     // goodsNow.forEach(v => {
@@ -81,7 +80,7 @@ Page({
       wx.showToast({
         icon: 'loading',
         mask: true,
-        duration:1000
+        duration: 1000
       });
       //等待1秒后执行
       setTimeout(() => {
@@ -89,7 +88,7 @@ Page({
           showCenterDialog: !that.data.showCenterDialog
         });
       }, 1000);
-      console.log(address.userName);
+      console.log("用户昵称："+address.userName);
     }
 
   },
@@ -100,30 +99,49 @@ Page({
     });
   },
   valueSix(e) {
-    var pwd=e.detail;
+    var pwd = e.detail;
     console.log(e.detail);
     // 模态交互效果
-    if(pwd=='123654')
-    {
+    if (pwd == '123654') {
       //密码输入正确事件处理
-     
+
       this.onClickdiaCenterView();
-      request({method: "POST", data:[this.data.goodsNow],url: "/order/test" })
-      .then(result => {
-        console.log(result.data);
-        wx.showToast({
-          title: '支付成功',
-          icon: 'success',
-          duration: 2000
+      var goodsLists = [this.data.goodsNow];
+      var goodsLists = goodsLists.map(v => {
+        return Object.assign({}, {
+          'goods_id': v.goods_id,
+          'goods_name': v.goods_name,
+          'goods_num': v.num,
+          'goods_price': v.goods_price
         });
-      })
-    }
-    else{
+      });
+      request({
+          method: "POST",
+          data: {goodsList:goodsLists,address:wx.getStorageSync("address")},
+          url: "/order/create"
+        })
+        .then(result => {
+          if(result.data.status===200){
+            wx.showToast({
+              title: result.data.message,
+              icon: 'success',
+              duration: 1500
+            });
+          }
+        else{
+          wx.showToast({
+            title: result.data.message,
+            icon: 'error',
+            duration: 1500,
+          });
+        }
+        })
+    } else {
       wx.showToast({
-         //密码输入错误事件处理
+        //密码输入错误事件处理
         title: '密码错误',
-        icon: 'none',
-        duration: 2000
+        icon: 'error',
+        duration: 1500
       });
     }
   }

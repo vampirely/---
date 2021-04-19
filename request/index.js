@@ -27,6 +27,8 @@ export const request = (params) => {
                         icon: 'none',
                         duration: 1500,
                         success: (result) => {
+                            wx.removeStorageSync("userInfo");
+                            wx.removeStorageSync("token");
                             wx.switchTab({
                                 url: '/pages/user/user',
                                 success: (result) => {

@@ -46,7 +46,7 @@ Page({
   handleAbout() {
     wx.showModal({
       title: '关于',
-      content: '毕设题目：基于Node.js的手机端在线商城设计',
+      content: ' Programmed by Communication engineering 1705 Li Huan',
       showCancel: false,
       cancelColor: '#000000',
       confirmText: '确定',

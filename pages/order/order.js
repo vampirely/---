@@ -13,8 +13,8 @@ Page({
     orders:[],
     tabs: [
       { id: 0, value: '全部', isActive: true },
-      { id: 1, value: '待评价', isActive: false },
-      { id: 2, value: '待收货', isActive: false },
+      { id: 1, value: '待收货', isActive: false },
+      { id: 2, value: '待评价', isActive: false },
       { id: 3, value: '退款/退货', isActive: false }
     ]
   },
@@ -33,10 +33,26 @@ Page({
 
   //获取订单列表
   async getOrders(type){
-    // const res = await request({url:"/my/orders/all",data:{type}});
-    // this.setData({
-    //   orders:res.orders.map(v => ({...v,create_time_cn:(new Date(v.create_time*1000).toLocaleString())}))
-    // })
+    const res = await request({url:"/order/search",data:{type}});
+   
+    var order=res.data.message||[];
+    for(var i=0;i<order.length;i++){
+        order[i].price=order[i].goods_num*order[i].goods_price;
+    }
+    console.log(order);
+    if(res.data.status){
+      this.setData({
+        orders:res.data.message
+      })
+    }
+   else{
+     wx.showToast({
+       title: '订单查询失败',
+       icon: 'none',
+       duration: 1500
+     });
+       
+   }
   },
 
   //根据标题索引激活选中
@@ -48,6 +64,7 @@ Page({
     this.setData({
       tabs
     })
+    this.getOrders(index);
   },
   // 点击tab栏切换样式
   handleTabsChange(e) {

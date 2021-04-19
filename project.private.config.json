@@ -99,6 +99,13 @@
         {
           "name": "搜素",
           "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的订单",
+          "pathName": "pages/order/order",
+          "query": "type=1",
           "scene": null
         }
       ]

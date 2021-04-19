@@ -1,3 +1,86 @@
 page {
     background-color: whitesmoke;
 }
+
+.first_tab {
+
+
+    .goods_item {
+        background-color: white;
+        margin: 10rpx;
+        border-radius: 20rpx;
+        display: flex;
+        box-shadow: 0rpx 0rpx 10rpx rgb(200, 200, 200);
+
+        .goods_img {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            image {
+                padding: 5rpx;
+                height: auto;
+                width: 65%;
+            }
+        }
+
+        .good_info {
+
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .goods_name {
+                display: -webkit-inline-box;
+                overflow: hidden;
+            }
+
+            .total_price {
+                text-align: right;
+            }
+
+            .goods_price_wrap {
+                display: flex;
+                font-size: 24rpx;
+                .goods_price {
+                    color: var(--themeColor);
+                }
+
+                .goods_num {
+                    color: rgb(196, 196, 196);
+                }
+            }
+
+            .total_price_wrap {
+                display: flex;
+                
+                font-size: 26rpx;
+                .tip{
+                    text-align: right;
+                }
+                .total_price{
+                    color: var(--themeColor);
+                    font-weight: bold;
+                }
+            }
+
+            .address {
+                font-size: 20rpx;
+                color: gray;
+            }
+
+            .goods_cancel {
+                text-align: right;
+                margin-right: 10rpx;
+                margin-bottom: 10rpx;
+                color: var(--themeColor);
+                margin-left: 300rpx;
+
+
+            }
+
+        }
+    }
+}

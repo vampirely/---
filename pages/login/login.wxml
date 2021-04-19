@@ -8,7 +8,7 @@
 <view class="container">
     <view class="userinfo">
         <block >
-            <button type="primary" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">获取头像昵称</button>
+            <button type="primary" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">授权登录</button>
         </block>
     </view>
 </view>
