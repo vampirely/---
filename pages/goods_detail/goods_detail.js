@@ -93,7 +93,7 @@ Page({
   handleCartAdd() {
     /* 获取缓存中的购物车数组 */
     /*  data = data || [];
-     易点的写法应该是这样吧 data = data ? data : []; */
+     这样 data = data ? data : []; */
     let cart = wx.getStorageSync("Cart") || [];
 
     //判断商品对象是否存在于购物车数组中\

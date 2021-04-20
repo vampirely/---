@@ -54,4 +54,5 @@
 }
 page {
   background-color: whitesmoke;
+  margin-bottom: 90rpx;
 }

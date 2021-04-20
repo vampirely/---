@@ -95,29 +95,42 @@ Page({
           'goods_name': v.goods_name,
           'goods_num': v.num,
           'goods_price': v.goods_price,
-          'goods_small_logo':v.goods_small_logo
+          'goods_small_logo': v.goods_small_logo
         });
-      });//只保留需要post 的数据
+      }); //只保留需要post 的数据
       request({
           method: "POST",
-          data: {goodsList:goodsLists,address:wx.getStorageSync("address")},
+          data: {
+            goodsList: goodsLists,
+            address: wx.getStorageSync("address")
+          },
           url: "/order/create"
         })
         .then(result => {
-          if(result.data.status===200){
+          if (result.data.status === 200) {
             wx.showToast({
               title: result.data.message,
               icon: 'success',
+              duration: 1500,
+              success: () => {
+                let newCart = wx.getStorageSync("Cart");
+                newCart = newCart.filter(v => !v.IsChecked); //删除已购买
+                wx.setStorageSync("Cart", newCart);
+                setTimeout(() => {
+                  wx.navigateBack({
+                    delta: 2
+                  });
+                }, 1500);
+                
+              }
+            });
+          } else {
+            wx.showToast({
+              title: result.data.message,
+              icon: 'error',
               duration: 1500
             });
           }
-        else{
-          wx.showToast({
-            title: result.data.message,
-            icon: 'error',
-            duration: 1500,
-          });
-        }
         })
     } else {
       wx.showToast({

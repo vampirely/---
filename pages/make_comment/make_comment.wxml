@@ -1,0 +1,22 @@
+<view class="tips">
+    评价一下商品吧~
+</view>
+  
+<view class="star_wrap">
+    <view >评分：</view>
+    <view class="show_star">
+        <block wx:for="{{star1}}" wx:key="index">
+            <image catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='../../icons/star_yellow.png'></image>
+        </block>
+        <block wx:for="{{star2}}" wx:key="index">
+            <image catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='../../icons/star.png'></image>
+        </block>
+    </view>
+    <view class="starnum">{{star1}}星</view>
+</view>
+<view class="content">
+    <textarea bindinput="handleGetText" class="content_textarea" value="" placeholder="更多评价请写在这里"></textarea>
+</view>
+<view class="btn_wrap">
+    <view class="submit" bindtap="handleComment">提交</view>
+</view>

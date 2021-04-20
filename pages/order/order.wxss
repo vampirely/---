@@ -57,6 +57,41 @@ page {
   font-size: 20rpx;
   color: gray;
 }
+.first_tab .goods_item .good_info .btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10rpx;
+}
+.first_tab .goods_item .good_info .btn_wrap .btn_del {
+  text-align: center;
+  width: 120rpx;
+  font-size: 24rpx;
+  background-color: red;
+  color: white;
+  border-radius: 20rpx;
+  padding: 5rpx;
+  margin-right: 20rpx;
+}
+.first_tab .goods_item .good_info .btn_wrap .btn_sure {
+  text-align: center;
+  width: 120rpx;
+  font-size: 24rpx;
+  background-color: orange;
+  color: white;
+  border-radius: 20rpx;
+  padding: 5rpx;
+  margin-right: 20rpx;
+}
+.first_tab .goods_item .good_info .btn_wrap .btn_comment {
+  text-align: center;
+  width: 120rpx;
+  font-size: 24rpx;
+  background-color: orange;
+  color: white;
+  border-radius: 20rpx;
+  padding: 5rpx;
+  margin-right: 20rpx;
+}
 .first_tab .goods_item .good_info .goods_cancel {
   text-align: right;
   margin-right: 10rpx;

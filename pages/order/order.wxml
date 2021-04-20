@@ -23,11 +23,97 @@
                     </view>
                     <view class="address">订单编号：{{item1.order_sn}}</view>
                     <view class="address">支付时间：{{item1.pay_time}}</view>
+                    <view class="btn_wrap">
+                        <view wx:if="{{item1.comment_status==1}}" class="btn_del" data-id="{{item1.id}}" bindtap="handleOrderDelete">
+                            删除订单
+                        </view>
+                        <view wx:if="{{item1.shopping_status==0}}" class="btn_sure" data-id="{{item1.id}}" bindtap="handleOrderConfirm">
+                            确认收货
+                        </view>
+                        <navigator wx:if="{{item1.shopping_status==1&&item1.comment_status==0}}" hover-class="none" url="/pages/make_comment/make_comment?goods_id={{item1.goods_id}}&order_id={{item1.id}}">
+                            <view class="btn_comment" data-id="{{item1.id}}">评价</view>
+                        </navigator>
+                    </view>
                 </view>
             </view>
         </view>
     </block>
-    <block wx:elif="{{tabs[1].isActive}}">1</block>
-    <block wx:elif="{{tabs[2].isActive}}">2</block>
-    <block wx:elif="{{tabs[3].isActive}}">3</block>
+    <block wx:elif="{{tabs[1].isActive}}">
+         <view class="first_tab">
+            <view class="goods_item" wx:for="{{orders}}" wx:key="id" wx:for-item="item1">
+                <navigator hover-class="none" class="goods_img" url="/pages/goods_detail/goods_detail?goods_id={{item1.goods_id}}">
+                    <image mode="widthFix" lazy-load="{{true}}" src="{{item1.goods_small_logo}}"></image>
+                </navigator>
+                <view class="good_info">
+                    <view class="goods_name">{{item1.goods_name}}</view>
+                    <view class="goods_price_wrap">
+                        <view class="goods_price">¥{{item1.goods_price}}</view>
+                        <view class="goods_num">x{{item1.goods_num}}</view>
+                    </view>
+                    <view class="total_price_wrap">
+                        <view class="tip">合计：</view>
+                        <view class="total_price">¥{{item1.price}}</view>
+                    </view>
+                    <!-- <view class="goods_cancel" data-index="{{index}}" bindtap="handleCollectCancel">
+                        取消收藏
+                    </view> -->
+                    <view class="address">
+                        收货信息：{{item1.pay_name}} {{item1.mobile}} {{item1.address}}
+                    </view>
+                    <view class="address">订单编号：{{item1.order_sn}}</view>
+                    <view class="address">支付时间：{{item1.pay_time}}</view>
+                    <view class="btn_wrap">
+                        <view wx:if="{{item1.comment_status==1}}" class="btn_del" data-id="{{item1.id}}" bindtap="handleOrderDelete">
+                            删除订单
+                        </view>
+                        <view wx:if="{{item1.shopping_status==0}}" class="btn_sure" data-id="{{item1.id}}" bindtap="handleOrderConfirm">
+                            确认收货
+                        </view>
+                        <navigator wx:if="{{item1.shopping_status==1&&item1.comment_status==0}}" hover-class="none" url="/pages/make_comment/make_comment?goods_id={{item1.goods_id}}&order_id={{item1.id}}">
+                            <view class="btn_comment" data-id="{{item1.id}}">评价</view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+         <view class="first_tab">
+            <view class="goods_item" wx:for="{{orders}}" wx:key="id" wx:for-item="item1">
+                <navigator hover-class="none" class="goods_img" url="/pages/goods_detail/goods_detail?goods_id={{item1.goods_id}}">
+                    <image mode="widthFix" lazy-load="{{true}}" src="{{item1.goods_small_logo}}"></image>
+                </navigator>
+                <view class="good_info">
+                    <view class="goods_name">{{item1.goods_name}}</view>
+                    <view class="goods_price_wrap">
+                        <view class="goods_price">¥{{item1.goods_price}}</view>
+                        <view class="goods_num">x{{item1.goods_num}}</view>
+                    </view>
+                    <view class="total_price_wrap">
+                        <view class="tip">合计：</view>
+                        <view class="total_price">¥{{item1.price}}</view>
+                    </view>
+                    <!-- <view class="goods_cancel" data-index="{{index}}" bindtap="handleCollectCancel">
+                        取消收藏
+                    </view> -->
+                    <view class="address">
+                        收货信息：{{item1.pay_name}} {{item1.mobile}} {{item1.address}}
+                    </view>
+                    <view class="address">订单编号：{{item1.order_sn}}</view>
+                    <view class="address">支付时间：{{item1.pay_time}}</view>
+                    <view class="btn_wrap">
+                        <view wx:if="{{item1.comment_status==1}}" class="btn_del" data-id="{{item1.id}}" bindtap="handleOrderDelete">
+                            删除订单
+                        </view>
+                        <view wx:if="{{item1.shopping_status==0}}" class="btn_sure" data-id="{{item1.id}}" bindtap="handleOrderConfirm">
+                            确认收货
+                        </view>
+                        <navigator wx:if="{{item1.shopping_status==1&&item1.comment_status==0}}" hover-class="none" url="/pages/make_comment/make_comment?goods_id={{item1.goods_id}}&order_id={{item1.id}}">
+                            <view class="btn_comment" data-id="{{item1.id}}">评价</view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
 </Tabs>

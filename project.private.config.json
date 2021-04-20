@@ -79,7 +79,7 @@
           "scene": null
         },
         {
-          "name": "商品评价",
+          "name": "商品用户评价",
           "pathName": "pages/goods_comment/comment",
           "query": "goods_id=1",
           "scene": null
@@ -106,6 +106,12 @@
           "name": "我的订单",
           "pathName": "pages/order/order",
           "query": "type=1",
+          "scene": null
+        },
+        {
+          "name": "去评价",
+          "pathName": "pages/make_comment/make_comment",
+          "query": "goods_id=1&order_id=1",
           "scene": null
         }
       ]

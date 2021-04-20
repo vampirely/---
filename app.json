@@ -16,7 +16,8 @@
     "pages/auth/auth",
     "pages/pay/pay",
     "pages/history/history",
-    "pages/paynow/paynow"
+    "pages/paynow/paynow",
+    "pages/make_comment/make_comment"
   ],
   "window":{
     "backgroundTextStyle":"light",

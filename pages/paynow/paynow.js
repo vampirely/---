@@ -125,7 +125,17 @@ Page({
             wx.showToast({
               title: result.data.message,
               icon: 'success',
-              duration: 1500
+              duration: 1500,
+              success: () => {
+                let newCart = wx.getStorageSync("Cart");
+                newCart = newCart.filter(v => !v.IsChecked); //删除已购买
+                wx.setStorageSync("Cart", newCart);
+                setTimeout(() => {
+                  wx.navigateBack({
+                    delta: 2
+                  });
+                }, 1500);
+              }
             });
           }
         else{

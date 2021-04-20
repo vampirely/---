@@ -1,10 +1,11 @@
-<view class="goods_comment_wrap">
+<view class="goods_comment_wrap" wx:for="{{comment_list}}" >
     <view class="user_info_wrap">
-        <image src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKPCm3sycpmcPibxQ4hIicqU6695w7I6GPmjohM8M1mhhCTtiaEyYxGEciaN1y6A93dM2ic6VCvlRib6zfQ/132" />
-        <view class="user_name">用户名</view>
+        <image src="{{item.avatarUrl}}" />
+        <view class="user_name">{{item.nickName}}</view>
     </view>
     <view class="comment_info_wrap">
-        <view class="comment_time">2021-03-10 00:33:50</view>
-        <view class="comment-info">这个商品还不错！</view>
+        <view class="comment_time">{{item.add_time}}</view>
+        <view class="comment_star">评分：{{item.star_num}} 分</view>
+        <view class="comment-info">{{item.content}}</view>
     </view>
 </view>

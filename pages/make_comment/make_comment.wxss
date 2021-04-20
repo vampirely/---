@@ -1,0 +1,44 @@
+page {
+  background-color: white;
+}
+.tips {
+  text-align: center;
+  border-bottom: 1rpx solid #dfdfdf;
+  padding: 20rpx;
+}
+image {
+  height: 60rpx;
+  width: 60rpx;
+  display: inline-block;
+}
+.star_wrap {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.star_wrap .starnum {
+  padding-left: 50rpx;
+}
+.content {
+  border-radius: 20rpx;
+  box-shadow: 0rpx 0rpx 10rpx #969696;
+}
+.content .content_textarea {
+  padding: 10rpx;
+}
+.btn_wrap {
+  display: flex;
+  justify-content: center;
+}
+.btn_wrap .submit {
+  border-radius: 20rpx;
+  background-color: red;
+  width: 200rpx;
+  color: white;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}

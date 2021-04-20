@@ -28,7 +28,7 @@
                         </checkbox-group>
                     </view>
                     <!-- image -->
-                    <navigator class="cart_image">
+                    <navigator class="cart_image" hover-class="none" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
                         <image mode="widthFix" src="{{item.goods_small_logo}}" />
                     </navigator>
                     <!-- info -->
