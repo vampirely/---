@@ -115,7 +115,7 @@
 }
 .first_tab .goods_item .goods_img image {
   padding: 5rpx;
-  height: auto;
+  height: 180rpx;
   width: 65%;
 }
 .first_tab .goods_item .good_info {

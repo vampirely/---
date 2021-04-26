@@ -115,8 +115,16 @@ page {
   background-color: #fff;
 }
 .user_content .user_main .app_info_wrap .app_info_item {
-  padding: 20rpx;
+  padding: 8rpx;
   border-bottom: 1rpx solid #eee;
+}
+.user_content .user_main .app_info_wrap .app_info_item .btn_con {
+  font-size: 28rpx;
+  font-weight: 400;
+  width: 100%;
+  text-align: left;
+  padding-left: 1rpx;
+  background-color: white;
 }
 .user_content .user_main .app_info_wrap .app_info_contact {
   display: flex;

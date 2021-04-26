@@ -4,39 +4,45 @@
   right: 0;
   display: flex;
   width: 100%;
+  justify-content: center;
   background-color: #EFEFF4;
   border-top: 1rpx solid #D7D6DC;
   border-bottom: 1rpx solid #E6E6EA;
+  align-items: center;
 }
-.weui-icon-search_in-box {
-  height: 100%;
-}
-.weui-search-bar__form {
+.weui-search-bar .bar_wrap {
   flex: auto;
   border-radius: 10rpx;
   background: #FFFFFF;
   border: 1rpx solid #E6E6EA;
-  margin: 10rpx;
   height: 70rpx;
   justify-content: center;
 }
-.weui-search-bar__box {
+.weui-search-bar .bar_wrap .search_inf_wrap {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   display: flex;
 }
-.weui-search-bar__input {
+.weui-search-bar .bar_wrap .search_inf_wrap .icon_serach {
+  height: 100%;
+}
+.weui-search-bar .bar_wrap .text_input {
   border-left: 1rpx solid #E6E6EA;
   font-size: 30rpx;
   width: 100%;
   height: 100%;
 }
-.weui-search-bar__serach-btn {
+.weui-search-bar .weui-search-bar__serach-btn {
   color: #39A7F2;
-  padding-top: 20rpx;
-  padding-right: 10rpx;
-  border-radius: 20rpx;
+  padding: 10rpx;
+  background-color: white;
+  border: 1rpx solid #dddbdb;
+  text-align: center;
+  border-radius: 10rpx;
+  align-items: center;
+  margin-right: 2rpx;
+  box-shadow: 0rpx 0rpx 10rpx #c8c8c8;
 }
 .first_tab {
   margin-top: 100rpx;

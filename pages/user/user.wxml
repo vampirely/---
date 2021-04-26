@@ -47,17 +47,17 @@
         <view class="address_wrap" bindtap="handleChooseAddress">收货地址管理</view>
         <!-- 应用信息相关 -->
         <view class="app_info_wrap">
-            <view class="app_info_item app_info_contact">
-                <view>联系客服</view>
+            <view class="app_info_item ">
+                <button open-type="contact" class="btn_con" size="mini" >联系客服</button>
             </view>
             <view class="app_info_item">
-                <view bindtap="handleFeedback">意见反馈</view>
+                 <button open-type="feedback" class="btn_con" size="mini" >意见反馈</button>
             </view>
             <view class="app_info_item">
-                <view bindtap="handleAbout">关于</view>
+                <button bindtap="handleAbout" class="btn_con" size="mini" >关于</button>
             </view>
             <view class="app_info_item" style="background-color:#FF0000; border-bottom-right-radius:20rpx;border-bottom-left-radius:20rpx;">
-                <view bindtap="handleExit" style="color:white; display: flex;align-items: center;justify-content: center;">
+                <view bindtap="handleExit" style="color:white; display: flex;align-items: center;justify-content: center;padding:10rpx">
                     退出登录
                 </view>
             </view>
